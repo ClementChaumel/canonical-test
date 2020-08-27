@@ -20,6 +20,7 @@ export const Home = (): JSX.Element => (
         onClick={() => {
           window.alert('With typescript and Jest')
         }}
+        className="p-button--neutral"
       >
         Test Button
       </button>
