@@ -1,4 +1,5 @@
 import { Post } from '../@types/BlogPostType'
+import { Card } from '../components/Card'
 interface BlogPosts {
   posts: [Post]
 }
@@ -7,7 +8,7 @@ export const BlogPosts: React.FC<BlogPosts> = ({ posts }) => {
   return (
     <>
       {posts.map((post) => {
-        return <p key={post.id}>{post.title.rendered}</p>
+        return <Card key={post.id} post={post} />
       })}
     </>
   )
