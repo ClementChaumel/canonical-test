@@ -3,7 +3,7 @@ import { Post } from './../../@types/BlogPostType'
 export const mockPost: Post = {
   id: 123,
   link: 'https://canonical.com/',
-  featured_media: 'https://assets.ubuntu.com/v1/2eec3fd9-logo.svg',
+  'featured_media': 'https://assets.ubuntu.com/v1/2eec3fd9-logo.svg',
   date: '2020-08-24T15:44:44',
   title: {
     rendered: 'Post title',
@@ -55,7 +55,7 @@ export const mockPost: Post = {
 export const mockPostNoTopic: Post = {
   id: 123,
   link: 'https://canonical.com/',
-  featured_media: 'https://assets.ubuntu.com/v1/2eec3fd9-logo.svg',
+  'featured_media': 'https://assets.ubuntu.com/v1/2eec3fd9-logo.svg',
   date: '2020-08-24T15:44:44',
   title: {
     rendered: 'Post title',
@@ -91,7 +91,7 @@ export const mockPostNoTopic: Post = {
 export const mockPostNoTopicNoTag: Post = {
   id: 123,
   link: 'https://canonical.com/',
-  featured_media: 'https://assets.ubuntu.com/v1/2eec3fd9-logo.svg',
+  'featured_media': 'https://assets.ubuntu.com/v1/2eec3fd9-logo.svg',
   date: '2020-08-24T15:44:44',
   title: {
     rendered: 'Post title',
