@@ -1,0 +1,20 @@
+// Import the framework
+@import 'node_modules/vanilla-framework/scss/vanilla'
+
+// Here I override some of the values to add the '%' sign. Otherwise I was having those errors at build time:
+/**
+ 
+ SassError: $lightness: Expected -15 to have unit "%".
+ ╷
+ │       $button-active-background-color: scale-color($color-brand, $lightness: -$active-background-opacity-percentage),
+ │                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 
+ **/  
+$hover-background-opacity-amount: .05%
+$hover-background-opacity-percentage: .05%
+
+$active-background-opacity-amount: .15%
+$active-background-opacity-percentage: .15%
+
+// Include all of Vanilla Framework
+@include vanilla
