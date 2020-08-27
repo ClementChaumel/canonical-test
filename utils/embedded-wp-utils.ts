@@ -13,7 +13,7 @@ const TOPIC = 2
 const GROUP = 3
 
 export const getTerm = (embedded: Embedded, index): undefined | string => {
-  return embedded['wp:term'][index][0]?.name
+  return embedded['wp:term'][index]?.[0]?.name
 }
 
 interface Data {

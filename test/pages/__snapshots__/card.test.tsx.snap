@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <h3>
+      People and culture
+    </h3>
+    <img
+      alt="Post title illustration"
+      src="https://assets.ubuntu.com/v1/2eec3fd9-logo.svg"
+    />
+    <a
+      href="https://canonical.com/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <p>
+        Post title
+      </p>
+    </a>
+    <p>
+      By 
+      <a
+        href="https://canonical.com/billy-bob"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Billy Bob
+      </a>
+       on 24 August 2020
+    </p>
+    <h4>
+      Articles
+    </h4>
+  </div>
+</DocumentFragment>
+`;
