@@ -11,6 +11,7 @@
     "format": "prettier --write \"**/*.{js,ts,tsx}\"",
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "test": "NODE_ICU_DATA=node_modules/full-icu  jest",
+    "update-snapshots": "NODE_ICU_DATA=node_modules/full-icu  jest -u",
     "test:watch": "NODE_ICU_DATA=node_modules/full-icu  jest --watch",
     "test-all": "yarn lint && yarn type-check && yarn test"
   },
