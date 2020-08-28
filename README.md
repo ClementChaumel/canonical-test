@@ -1,48 +1,49 @@
-# NextJS Typescript Boilerplate
+# Canonical technical test
 
-Bootstrap a developer-friendly NextJS app configured with:
+The goal is to replicate the following design using [Vanilla framework](https://docs.vanillaframework.io) and using [this data](https://people.canonical.com/~anthonydillon/wp-json/wp/v2/posts.json) coming from the Wordpress API
 
-- [Typescript](https://www.typescriptlang.org/)
-- Linting with [ESLint](https://eslint.org/)
-- Formatting with [Prettier](https://prettier.io/)
-- Linting, typechecking and formatting on by default using [`husky`](https://github.com/typicode/husky) for commit hooks
-- Testing with [Jest](https://jestjs.io/) and [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro)
+ ![image](https://assets.ubuntu.com/v1/c0a2b5b5-candidate-test-blog-row-design.png)
+ 
+ The result can be seen [here](https://clementchaumel.github.io/canonical-test/) 
 
-## Deploy your own
 
-Deploy the example using [Vercel](https://vercel.com):
+# Installation
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest)
+1. clone the project on your computer `git clone git@github.com:ClementChaumel/canonical-test.git`
+2. go into the folder, install dependencies and run it.
+  ```sh 
+    cd canonical-test
+    yarn
+    yarn dev
+  ```
 
-## How to use
+3. The app is now accessible at `http://localhost:3000/`
 
-### Using `create-next-app`
+# Testing
+You can run `yarn test-all` to check jest tests, linting and typescript types.
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
 
-```bash
-npx create-next-app --example with-typescript-eslint-jest with-typescript-eslint-jest-app
-# or
-yarn create next-app --example with-typescript-eslint-jest with-typescript-eslint-jest-app
-```
-
-### Download manually
-
-Download the example:
+# Building
+This project uses [NextJS](https://nextjs.org/) to export to app into a static website optimised to be served over a CDN.
+To create an optimised build run the following commands
 
 ```bash
-curl https://codeload.github.com/vercel/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-typescript-eslint-jest
-cd with-typescript-eslint-jest
+yarn build
+yarn export
 ```
 
-Install it and run:
+You can then serve it using [serve](https://www.npmjs.com/package/serve)
 
 ```bash
-npm install
-npm run dev
-# or
-yarn
-yarn dev
+cd out
+npx serve -p 5555
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+And the generated static app will be running on http://localhost:5555/
+
+
+# Deploying
+The app is deployed automatically when changes happen on `master`
+
+# About
+This app was created using [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and is based on the [with-typescript-elsint-jest](https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest) template.
