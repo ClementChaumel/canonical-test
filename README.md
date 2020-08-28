@@ -24,7 +24,7 @@ You can run `yarn test-all` to check jest tests, linting and typescript types.
 
 
 # Building
-This project uses [NextJS](https://nextjs.org/) to export to app into a static website optimised to be served over a CDN.
+This project uses [NextJS](https://nextjs.org/) to export the app into a static website optimised to be served over a CDN.
 To create an optimised build run the following commands
 
 ```bash
