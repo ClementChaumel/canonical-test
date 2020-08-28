@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { Post } from '../@types/BlogPostType'
 import { Card } from '../components/Card'
 interface BlogPosts {
@@ -7,20 +8,26 @@ interface BlogPosts {
 
 export const BlogPosts: React.FC<BlogPosts> = ({ posts, error }) => {
   return (
-    <div className="row container">
-      {error ? (
-        <div className="p-notification--negative">
-          <p className="p-notification__response">
-            <span className="p-notification__status">Error:</span>Couldn&lsquo;t
-            fetch posts.
-          </p>
-        </div>
-      ) : (
-        posts.map((post) => {
-          return <Card key={post.id} post={post} />
-        })
-      )}
-    </div>
+    <>
+      <Head>
+        <title>Canonical test</title>
+        <meta name="description" content="Technical test for canonical"></meta>
+      </Head>
+      <div className="row container">
+        {error ? (
+          <div className="p-notification--negative">
+            <p className="p-notification__response">
+              <span className="p-notification__status">Error:</span>
+              Couldn&lsquo;t fetch posts.
+            </p>
+          </div>
+        ) : (
+          posts.map((post) => {
+            return <Card key={post.id} post={post} />
+          })
+        )}
+      </div>
+    </>
   )
 }
 
