@@ -16,5 +16,40 @@ $hover-background-opacity-percentage: .05%
 $active-background-opacity-amount: .15%
 $active-background-opacity-percentage: .15%
 
+$highlight-color: #a97da1
+
 // Include all of Vanilla Framework
 @include vanilla
+
+.container
+  margin: $spv-outer--scaleable 0
+
+.custom-card
+  @extend .p-card--highlighted
+  position: relative
+  display: flex
+  flex-direction: column
+
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    width: auto
+    height: $bar-thickness
+    background-color: $highlight-color
+
+  .illustration
+    border-radius: $border-radius
+    margin-bottom: $spv-inner--small
+
+.dotted-hr
+  height: 0
+  background: transparent
+  border-top: 1px dotted $color-mid-light
+  width: calc(100% + #{$sph-inner})
+  left: - $sph-inner--small
+
+.fill-space-v
+  flex-grow: 1

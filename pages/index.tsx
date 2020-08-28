@@ -6,11 +6,11 @@ interface BlogPosts {
 
 export const BlogPosts: React.FC<BlogPosts> = ({ posts }) => {
   return (
-    <>
+    <div className="row container">
       {posts.map((post) => {
         return <Card key={post.id} post={post} />
       })}
-    </>
+    </div>
   )
 }
 

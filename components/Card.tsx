@@ -18,20 +18,33 @@ export const Card: React.FC<Card> = ({ post }) => {
   const { author, category, firstTag: tag, topic } = getData(embedded)
 
   return (
-    <div>
-      <h3>{topic ? topic : tag ? tag : 'Canonical News'}</h3>
-      <img src={image} alt={`${postTitle} illustration`}></img>
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        <p>{postTitle}</p>
+    <div className="col-4 custom-card">
+      <h4 className="p-muted-heading">
+        {topic ? topic : tag ? tag : 'Canonical News'}
+      </h4>
+      <hr className="dotted-hr"></hr>
+      <img
+        className="illustration"
+        src={image}
+        alt={`${postTitle} illustration`}
+      ></img>
+      <a
+        className="fill-space-v"
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <h3>{postTitle}</h3>
       </a>
-      <p>
+      <p className="p-heading--6">
         By{' '}
         <a href={author.link} target="_blank" rel="noopener noreferrer">
           {author.name}
         </a>{' '}
         on {formatDate(date)}
       </p>
-      <h4>{category}</h4>
+      <hr className="dotted-hr"></hr>
+      <p className="u-no-margin--bottom">{category}</p>
     </div>
   )
 }
