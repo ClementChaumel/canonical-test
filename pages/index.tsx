@@ -2,14 +2,24 @@ import { Post } from '../@types/BlogPostType'
 import { Card } from '../components/Card'
 interface BlogPosts {
   posts: [Post]
+  error: boolean
 }
 
-export const BlogPosts: React.FC<BlogPosts> = ({ posts }) => {
+export const BlogPosts: React.FC<BlogPosts> = ({ posts, error }) => {
   return (
     <div className="row container">
-      {posts.map((post) => {
-        return <Card key={post.id} post={post} />
-      })}
+      {error ? (
+        <div className="p-notification--negative">
+          <p className="p-notification__response">
+            <span className="p-notification__status">Error:</span>Couldn&lsquo;t
+            fetch posts.
+          </p>
+        </div>
+      ) : (
+        posts.map((post) => {
+          return <Card key={post.id} post={post} />
+        })
+      )}
     </div>
   )
 }
@@ -17,14 +27,24 @@ export const BlogPosts: React.FC<BlogPosts> = ({ posts }) => {
 export default BlogPosts
 
 export async function getStaticProps() {
-  const res = await fetch(
-    'https://people.canonical.com/~anthonydillon/wp-json/wp/v2/posts.json'
-  )
-  const posts = await res.json()
+  try {
+    const res = await fetch(
+      'https://people.canonical.com/~anthonydillon/wp-json/wp/v2/posts.json'
+    )
+    const posts = res.ok ? await res.json() : []
 
-  return {
-    props: {
-      posts,
-    },
+    return {
+      props: {
+        posts,
+        error: !res.ok,
+      },
+    }
+  } catch {
+    return {
+      props: {
+        posts: [],
+        error: true,
+      },
+    }
   }
 }
