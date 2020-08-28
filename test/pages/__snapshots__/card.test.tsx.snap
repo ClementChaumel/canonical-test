@@ -13,11 +13,14 @@ exports[`Card component matches snapshot 1`] = `
     <hr
       class="dotted-hr"
     />
-    <img
-      alt="Post title illustration"
+    <div
       class="illustration"
-      src="https://assets.ubuntu.com/v1/2eec3fd9-logo.svg"
-    />
+    >
+      <img
+        alt="Post title illustration"
+        src="https://assets.ubuntu.com/v1/2eec3fd9-logo.svg"
+      />
+    </div>
     <a
       class="fill-space-v"
       href="https://canonical.com/"
