@@ -2,13 +2,15 @@ name: github pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   deploy:
     runs-on: ubuntu-18.04
+    env:
+      NODE_ENV: production
     steps:
       - uses: actions/checkout@v2
 
