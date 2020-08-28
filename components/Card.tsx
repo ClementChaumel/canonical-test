@@ -23,11 +23,9 @@ export const Card: React.FC<Card> = ({ post }) => {
         {topic ? topic : tag ? tag : 'Canonical News'}
       </h4>
       <hr className="dotted-hr"></hr>
-      <img
-        className="illustration"
-        src={image}
-        alt={`${postTitle} illustration`}
-      ></img>
+      <div className="illustration">
+        <img src={image} alt={`${postTitle} illustration`}></img>
+      </div>
       <a
         className="fill-space-v"
         href={link}

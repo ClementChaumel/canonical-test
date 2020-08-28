@@ -17,6 +17,7 @@ $active-background-opacity-amount: .15%
 $active-background-opacity-percentage: .15%
 
 $highlight-color: #a97da1
+$illustration-ratio: percentage(540 / 960)
 
 // Include base Vanilla styles
 @include vf-base
@@ -29,7 +30,7 @@ $highlight-color: #a97da1
 @include vf-p-muted-heading
 
 .container
-  margin: $spv-outer--scaleable 0
+  margin-top: $spv-outer--scaleable
 
 .custom-card
   @extend .p-card--highlighted
@@ -48,8 +49,25 @@ $highlight-color: #a97da1
     background-color: $highlight-color
 
   .illustration
-    border-radius: $border-radius
+    width: 100%
+    position: relative
     margin-bottom: $spv-inner--small
+
+    &::before
+      content: ''
+      display: block
+      width: 100%
+      padding-bottom: $illustration-ratio
+
+    img
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: center
+      border-radius: $border-radius
 
 .dotted-hr
   height: 0
