@@ -10,7 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     env:
-      NODE_ENV: production
+      DEPLOY_TARGET: production
     steps:
       - uses: actions/checkout@v2
 
