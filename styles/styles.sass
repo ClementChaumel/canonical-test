@@ -18,8 +18,15 @@ $active-background-opacity-percentage: .15%
 
 $highlight-color: #a97da1
 
-// Include all of Vanilla Framework
-@include vanilla
+// Include base Vanilla styles
+@include vf-base
+
+// Include needed components
+@include vf-p-grid
+@include vf-p-card
+@include vf-p-notification
+@include vf-p-headings
+@include vf-p-muted-heading
 
 .container
   margin: $spv-outer--scaleable 0
